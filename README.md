@@ -11,7 +11,7 @@
 - Openweathermap API
 
 #### Livedemo
-- [GitHub Pages]()
+- [GitHub Pages](https://ceci007.github.io/weather-app/)
 
 
 ## Getting started
