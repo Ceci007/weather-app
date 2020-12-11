@@ -20,12 +20,12 @@ const weatherInfoDom = (() => {
 		temperatureFahrenheit.innerHTML = `${Math.round(
 			1.8 * extractedData.temperature + 32
 		)}<sup class="main-temp">&#8457</sup>`;
-		feelsLikeCelcius.innerHTML = `Feels like: ${Math.round(
+		feelsLikeCelcius.innerHTML = `Feels like: <span id="temp-toggle">${Math.round(
 			extractedData.feelsLike
-		)}<sup class="alt-temp">&#8451</sup>`;
-		feelsLikeFahrenheit.innerHTML = `Feels like: ${Math.round(
+		)}<sup class="alt-temp">&#8451</sup></span>`;
+		feelsLikeFahrenheit.innerHTML = `Feels like: <span id="temp-toggle">${Math.round(
 			1.8 * extractedData.feelsLike + 32
-		)}<sup class="alt-temp">&#8457</sup>`;
+		)}<sup class="alt-temp">&#8457</sup></span>`;
 		wind.textContent = `Wind: ${extractedData.wind} km/h`;
 		humidity.textContent = `Humidity: ${extractedData.humidity}%`;
 		weatherInfo.classList.remove('anim');

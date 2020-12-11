@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/ico" href="./assets/icons/logo.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Weather App</title>
 </head>
 <body>  
@@ -21,10 +23,10 @@
           <p class="temperature-fahrenheit">32<sup class="main-temp">&#8457</sup></p>
           <div class="divider"></div>
           <div class="misc-info">
-            <p class="feels-like-celcius">Feels like: 33<sup class="alt-temp">&#8451</sup></p>
-            <p class="feels-like-fahrenheit">Feels like: 33<sup class="alt-temp">&#8457</sup></p>
-            <p class="wind">Wind: 5.1 km/h</p>
-            <p class="humidity">Humidity: 52%</p>
+            <p class="feels-like-celcius">Feels like: <span id="temp-toggle">33<sup class="alt-temp">&#8451</sup></span></p>
+            <p class="feels-like-fahrenheit">Feels like: <span id="temp-toggle">33<sup class="alt-temp">&#8457</sup></span></p>
+            <p class="wind">Wind: <span id="margin-left">5.1 km/h</span></p>
+            <p class="humidity">Humidity: <span id="margin-left">52%</span></p>
           </div>
         </div>
       </div>
