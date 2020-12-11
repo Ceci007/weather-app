@@ -52,11 +52,12 @@ import dayClouds2 from '../assets/img/day/clouds/clouds2.jpg';
 import dayClouds3 from '../assets/img/day/clouds/clouds3.jpg';
 
 const nightThunderstormArr = [
-	thunderstorm0,
-	thunderstorm1,
-	thunderstorm2,
-	thunderstorm3,
+  thunderstorm0,
+  thunderstorm1,
+  thunderstorm2,
+  thunderstorm3,
 ];
+
 const nightRainArr = [rain0, rain1, rain2, rain3, rain4];
 const nightClearArr = [clear0, clear1, clear2, clear3, clear4];
 const nightSnowArr = [snow0, snow1, snow2, snow3, snow4, snow5];
@@ -64,81 +65,79 @@ const nightFogArr = [fog0, fog1, fog2];
 const nightCloudsArr = [clouds0, clouds1, clouds2];
 
 const dayThunderstormArr = [
-	dayThunderstorm0,
-	dayThunderstorm1,
-	dayThunderstorm2,
-	dayThunderstorm3,
+  dayThunderstorm0,
+  dayThunderstorm1,
+  dayThunderstorm2,
+  dayThunderstorm3,
 ];
+
 const dayRainArr = [dayRain0, dayRain1, dayRain2, dayRain3, dayRain4];
 const daySnowArr = [daySnow0, daySnow1, daySnow2, daySnow3];
 const dayFogArr = [dayFog0, dayFog1, dayFog2, dayFog3, dayFog4];
 const dayClearArr = [dayClear0, dayClear1, dayClear2, dayClear3];
 const dayCloudsArr = [dayClouds0, dayClouds1, dayClouds2, dayClouds3];
 
-function setBackground(id, sunrise, sunset) {
-	let currentUnixTimeSeconds = getCurrentUnixTime();
-	const content = document.querySelector('#content');
-	if (currentUnixTimeSeconds >= sunrise && currentUnixTimeSeconds <= sunset) {
-		if (id >= 200 && id <= 232) {
-			content.style.backgroundImage = `url(
-			${dayThunderstormArr[Math.floor(Math.random() * dayThunderstormArr.length)]}
-		)`;
-		} else if (id >= 300 && id <= 531) {
-			content.style.backgroundImage = `url(
-			${dayRainArr[Math.floor(Math.random() * dayRainArr.length)]}
-		)`;
-		} else if (id >= 600 && id <= 622) {
-			content.style.backgroundImage = `url(
-			${daySnowArr[Math.floor(Math.random() * daySnowArr.length)]}
-		)`;
-		} else if (id >= 701 && id <= 781) {
-			content.style.backgroundImage = `url(
-			${dayFogArr[Math.floor(Math.random() * dayFogArr.length)]}
-		)`;
-		} else if (id === 800) {
-			content.style.backgroundImage = `url(
-			${dayClearArr[Math.floor(Math.random() * dayClearArr.length)]}
-		)`;
-		} else if (id >= 801 && id <= 804) {
-			content.style.backgroundImage = `url(
-			${dayCloudsArr[Math.floor(Math.random() * dayCloudsArr.length)]}
-		)`;
-		}
-	} else if (
-		currentUnixTimeSeconds >= sunset ||
-		currentUnixTimeSeconds <= sunrise
-	) {
-		if (id >= 200 && id <= 232) {
-			content.style.backgroundImage = `url(
-			${nightThunderstormArr[Math.floor(Math.random() * nightThunderstormArr.length)]}
-		)`;
-		} else if (id >= 300 && id <= 531) {
-			content.style.backgroundImage = `url(
-			${nightRainArr[Math.floor(Math.random() * nightRainArr.length)]}
-		)`;
-		} else if (id >= 600 && id <= 622) {
-			content.style.backgroundImage = `url(
-			${nightSnowArr[Math.floor(Math.random() * nightSnowArr.length)]}
-		)`;
-		} else if (id >= 701 && id <= 781) {
-			content.style.backgroundImage = `url(
-			${nightFogArr[Math.floor(Math.random() * nightFogArr.length)]}
-		)`;
-		} else if (id === 800) {
-			content.style.backgroundImage = `url(
-			${nightClearArr[Math.floor(Math.random() * nightClearArr.length)]}
-		)`;
-		} else if (id >= 801 && id <= 804) {
-			content.style.backgroundImage = `url(
-			${nightCloudsArr[Math.floor(Math.random() * nightCloudsArr.length)]}
-		)`;
-		}
-	}
+function getCurrentUnixTime() {
+  const d = new Date();
+  return Math.floor(d.getTime() / 1000);
 }
 
-function getCurrentUnixTime() {
-	let d = new Date();
-	return Math.floor(d.getTime() / 1000);
+function setBackground(id, sunrise, sunset) {
+  const currentUnixTimeSeconds = getCurrentUnixTime();
+  const content = document.querySelector('#content');
+  if (currentUnixTimeSeconds >= sunrise && currentUnixTimeSeconds <= sunset) {
+    if (id >= 200 && id <= 232) {
+      content.style.backgroundImage = `url(
+			    ${dayThunderstormArr[Math.floor(Math.random() * dayThunderstormArr.length)]}
+		  )`;
+    } else if (id >= 300 && id <= 531) {
+      content.style.backgroundImage = `url(
+			    ${dayRainArr[Math.floor(Math.random() * dayRainArr.length)]}
+		  )`;
+    } else if (id >= 600 && id <= 622) {
+      content.style.backgroundImage = `url(
+			    ${daySnowArr[Math.floor(Math.random() * daySnowArr.length)]}
+		  )`;
+    } else if (id >= 701 && id <= 781) {
+      content.style.backgroundImage = `url(
+			    ${dayFogArr[Math.floor(Math.random() * dayFogArr.length)]}
+		  )`;
+    } else if (id === 800) {
+      content.style.backgroundImage = `url(
+			    ${dayClearArr[Math.floor(Math.random() * dayClearArr.length)]}
+		  )`;
+    } else if (id >= 801 && id <= 804) {
+      content.style.backgroundImage = `url(
+			    ${dayCloudsArr[Math.floor(Math.random() * dayCloudsArr.length)]}
+		  )`;
+    }
+  } else if (currentUnixTimeSeconds >= sunset || currentUnixTimeSeconds <= sunrise) {
+    if (id >= 200 && id <= 232) {
+      content.style.backgroundImage = `url(
+			    ${nightThunderstormArr[Math.floor(Math.random() * nightThunderstormArr.length)]}
+		  )`;
+    } else if (id >= 300 && id <= 531) {
+      content.style.backgroundImage = `url(
+			    ${nightRainArr[Math.floor(Math.random() * nightRainArr.length)]}
+		  )`;
+    } else if (id >= 600 && id <= 622) {
+      content.style.backgroundImage = `url(
+			    ${nightSnowArr[Math.floor(Math.random() * nightSnowArr.length)]}
+		  )`;
+    } else if (id >= 701 && id <= 781) {
+      content.style.backgroundImage = `url(
+			    ${nightFogArr[Math.floor(Math.random() * nightFogArr.length)]}
+		  )`;
+    } else if (id === 800) {
+      content.style.backgroundImage = `url(
+			    ${nightClearArr[Math.floor(Math.random() * nightClearArr.length)]}
+		  )`;
+    } else if (id >= 801 && id <= 804) {
+      content.style.backgroundImage = `url(
+			    ${nightCloudsArr[Math.floor(Math.random() * nightCloudsArr.length)]}
+		  )`;
+    }
+  }
 }
 
 export default setBackground;
